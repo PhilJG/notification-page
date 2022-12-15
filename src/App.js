@@ -9,7 +9,7 @@ function App() {
       <UserNotification firstName='mark' lastName='webber' />
       <UserNotification firstName='angela' lastName='gray' />
       <UserNotification firstName='jacob' lastName='thompson' />
-      <UserNotification firstName='rizky' lastName='hassanuddin' />
+      <UserNotification firstName='rizky' lastName='hasanuddin' />
       <UserNotification firstName='kimberly' lastName='smith' />
       <UserNotification firstName='nathan' lastName='peterson' />
       <UserNotification firstName='anna' lastName='kim' />
