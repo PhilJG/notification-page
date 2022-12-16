@@ -1,0 +1,71 @@
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+body {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding-right: 0.5rem;
+}
+
+a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blue);
+}
+.container {
+  padding: 5vw;
+}
+
+/* Head */
+.head {
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.head__count {
+  padding: 0.1rem 0.75rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+/* UserNotifications */
+h2 {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.notification__content .avatar {
+  width: 40px;
+}
+
+.read {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: var(--red);
+}
