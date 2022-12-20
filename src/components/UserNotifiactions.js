@@ -7,15 +7,23 @@ export const UserNotification = (props) => {
         className='avatar'
         src={`./assets/images/avatar-${props.firstName}-${props.lastName}.webp`}></img>
       <div className='notification__box'>
-        <h2>
+        <span className='notification__prop notification__prop--name'>
           {props.firstName} {props.lastName}
-        </h2>
-        <p>
+        </span>
+        {"  "}
+        <span className='notification__prop notification__prop--activity'>
           {props.activity}
-          {props.post}
-          <div>{props.circle}</div>
-          {props.when}
-        </p>
+        </span>
+        {"  "}
+        <span className='notification__prop notification__prop--post'>
+          {props.post}{" "}
+        </span>
+        <div>
+          {props.circle}
+          <span className='notification__prop notification__prop--when'>
+            {props.when}
+          </span>
+        </div>
       </div>
     </div>
   );

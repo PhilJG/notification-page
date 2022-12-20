@@ -51,16 +51,37 @@ a {
 }
 
 /* UserNotifications */
-h2 {
+.notification {
+  padding: 0.75rem;
+  background-color: var(--very-light-grayish-blue);
+  margin: 0.75rem 0;
+  border-radius: 5px;
+}
+
+.notification__box {
+  padding-left: 1rem;
+  display: inline;
+}
+.avatar {
+  width: 40px;
+}
+.notification__prop {
+  color: var(--dark-grayish-blue);
+}
+.notification__prop--name {
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 800;
+  padding: 0;
+  color: var(--very-dark-blue);
 }
 
-.notification__content .avatar {
-  width: 40px;
+.notification__prop--post {
+  font-weight: 800;
 }
-
+.notification__prop--when {
+  color: var(--grayish-blue);
+}
 .read {
   width: 10px;
   height: 10px;

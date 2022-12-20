@@ -30,7 +30,7 @@ function App() {
         activity='has joined your group'
         post='Chess Club'
         read='false'
-        when='1m ago'
+        when='1days ago'
       />
 
       <UserNotification
