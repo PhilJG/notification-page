@@ -1,8 +1,10 @@
+import { useState } from "react";
 import "./App.css";
 import Head from "./components/Head";
 import { UserNotification } from "./components/UserNotifiactions";
 
 function App() {
+  useState();
   return (
     <div className='container'>
       <Head />

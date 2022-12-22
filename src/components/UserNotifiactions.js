@@ -1,8 +1,9 @@
 import "./appStyle.css";
+import React, { useState } from "react";
 
 export const UserNotification = (props) => {
   return (
-    <div className='notification flex'>
+    <div className='notification  flex'>
       <img
         className='avatar'
         src={`./assets/images/avatar-${props.firstName}-${props.lastName}.webp`}></img>
