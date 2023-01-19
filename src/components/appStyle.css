@@ -50,6 +50,10 @@ a {
   font-weight: 800;
 }
 
+.head__right {
+  cursor: pointer;
+}
+
 /* UserNotifications */
 .notification {
   padding: 0.75rem;
