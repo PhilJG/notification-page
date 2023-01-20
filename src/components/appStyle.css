@@ -86,6 +86,11 @@ a {
 .notification__prop--when {
   color: var(--grayish-blue);
 }
+
+.head__read {
+  cursor: pointer;
+}
+
 .read {
   width: 10px;
   height: 10px;

@@ -1,105 +1,44 @@
 import { Component } from "react";
+import Head from "./Head";
 
 import "./appStyle.css";
 
 class User extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      hasChanged: false
+    }
+  }
   render() {
-    //initialize the state with users array. That is all constructor is being used for in this project
-    this.state = {
-      users: [
-        {
-          id: "1",
-          firstName: "mark",
-          lastName: "webber",
-          activity: "reacted to your recent post",
-          post: "My first tournament today!",
-          read: "false",
-          when: "1m ago",
-        },
-        {
-          id: "2",
-          firstName: "angela",
-          lastName: "gray",
-          activity: "followed you",
-          read: "false",
-          when: "5m ago",
-        },
-        {
-          id: "3",
-          firstName: "jacob",
-          lastName: "thompson",
-          activity: "has joined your group",
-          post: "Chess Club",
-          read: "false",
-          when: "1days ago",
-        },
-        {
-          id: "4",
-          firstName: "rizky",
-          lastName: "hasanuddin",
-          activity: "commented on your picture",
-          read: "true",
-          when: "1 week ago",
-        },
-        {
-          id: "5",
-          firstName: "kimberly",
-          lastName: "smith",
-          activity: "commented on your picture",
-          read: "true",
-          when: "1 week ago",
-        },
-        {
-          id: "6",
-          firstName: "nathan",
-          lastName: "peterson",
-          activity: "reacted to your recent post",
-          post: "5 end game strategies to increase your win rate",
-          read: "true",
-          when: "2 weeks ago",
-        },
-        {
-          id: "7",
-          firstName: "anna",
-          lastName: "kim",
-          activity: "left group",
-          post: "Chess Club",
-          read: "true",
-          when: "2 weeks ago",
-        },
-      ],
-    };
     return (
       <div >
-        {this.state.users.map((user) => {
-          return (
-            <div className="notification flex" key={user.id}>
+            <div className="notification flex" key={this.props.id}>
               <img
                 className="avatar"
-                src={`./assets/images/avatar-${user.firstName}-${user.lastName}.webp`}
+                src={`./assets/images/avatar-${this.props.firstName}-${this.props.lastName}.webp`}
               ></img>
               <div className="notification__box">
                 <span className="notification__prop notification__prop--name">
-                  {user.firstName} {user.lastName}
+                  {this.props.firstName} {this.props.lastName}
                 </span>
                 {"  "}
                 <span className="notification__prop notification__prop--activity">
-                  {user.activity}
+                  {this.props.activity}
                 </span>
                 {"  "}
                 <span className="notification__prop notification__prop--post">
-                  {user.post}{" "}
+                  {this.props.post}{" "}
                 </span>
                 <div>
-                  {user.circle}
+                  {this.props.circle}
                   <span className="notification__prop notification__prop--when">
-                    {user.when}
+                    {this.props.when}
                   </span>
                 </div>
               </div>
             </div>
-          );
-        })}
       </div>
     );
   }
