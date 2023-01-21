@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Head from "./Head";
+// import Head from "./Head";
 
 import "./appStyle.css";
 
@@ -7,18 +7,29 @@ class User extends Component {
 
   constructor(props){
     super(props);
-    this.state={
-      hasChanged: false
-    }
+   this.state = {
+    hasChanged: false
+   }
+  }
+
+  changeState = () => {
+    // ev.preventDefault();
+    this.setState({hasChanged:true})
+    console.log('changed');
+    
+
+    //pass the name back up to App.js level which will make the state change in the parent rerender 
+    // this.props.markRead(this.props.firstName)
+    
   }
   render() {
     return (
       <div >
-            <div className="notification flex" key={this.props.id}>
+            <div className={"notification flex"} key={this.props.id}>
               <img
                 className="avatar"
                 src={`./assets/images/avatar-${this.props.firstName}-${this.props.lastName}.webp`}
-              ></img>
+           ></img>
               <div className="notification__box">
                 <span className="notification__prop notification__prop--name">
                   {this.props.firstName} {this.props.lastName}
@@ -36,6 +47,8 @@ class User extends Component {
                   <span className="notification__prop notification__prop--when">
                     {this.props.when}
                   </span>
+                  {/* <button onClick={this.changeState}>Mark as read</button>
+                  {this.state.hasChanged && (<span>Updated</span>)} */}
                 </div>
               </div>
             </div>

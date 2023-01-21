@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Component } from "react";
 import "./App.css";
-import Head from "./components/Head";
+// import Head from "./components/Head";
 import User from "./components/User";
 
 class App extends Component {
@@ -72,11 +72,46 @@ class App extends Component {
       ],
     };
   }
+   markRead = () => {
+  
+     // loop through users array
+     // produce new user object that is set to false with map
+     let readUsers = this.state.users.map((u) => {
+       //if user has not been read(false)
+       if (u.read === false) {
+         //change to read(true)
+         u.read = true;
+         console.log(u);
+         
+       }
+       return u;
+     });
+     // setState changed to new readUsers array
+     this.setState({ users: readUsers });
+     console.log('read');
+     
+   };
+
 
   render() {
     return (
       <div className="container">
-        <Head />
+        <div className="flex head">
+          <div className="head__left flex">
+            <h1>Notifications</h1>
+            <div 
+            // className={state ? "head__count" : " "}
+            >
+              {/* {state ? "3" : " "} */}
+            </div>
+          </div>
+          <a 
+          onClick={this.state.markRead} 
+          className="head__read">
+            Mark all as read
+          </a>
+        </div>
+        {/* <Head /> */}
 
         {this.state.users.map((user) => (
           <User
@@ -85,8 +120,10 @@ class App extends Component {
             lastName={user.lastName}
             activity={user.activity}
             post={user.post}
-            read={user.read}
             when={user.when}
+            read={user.read}
+            //passing markRead function into component
+            markRead={this.markRead}
           />
         ))}
       </div>
