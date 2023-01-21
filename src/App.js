@@ -5,8 +5,8 @@ import "./App.css";
 import User from "./components/User";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       users: [
         {
@@ -105,11 +105,11 @@ class App extends Component {
               {/* {state ? "3" : " "} */}
             </div>
           </div>
-          <a 
+          <button 
           onClick={this.state.markRead} 
           className="head__read">
             Mark all as read
-          </a>
+          </button>
         </div>
         {/* <Head /> */}
 
