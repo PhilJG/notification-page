@@ -76,9 +76,7 @@ class App extends Component {
   
      // loop through users array
      // produce new user object that is set to false with map
-     const updatedUsers = this.state.users.map(user => {
-      console.log('clicked');
-       
+     const updatedUsers = this.state.users.map(user => {       
       return { ...user, unread: false };
      });
      
@@ -101,7 +99,7 @@ class App extends Component {
           </div>
           <button 
           onClick={this.markAllRead} 
-          className="head__read">
+          className="head__button">
             Mark all as read
           </button>
         </div>
@@ -116,7 +114,8 @@ class App extends Component {
             activity={user.activity}
             post={user.post}
             when={user.when}
-            s
+            dot={user.unread ? "dot__unread" : "dot__read"}
+            
             // read={user.read && <span>(read)</span>}
             //passing markRead function into component
             // markRead={(this.markRead)}

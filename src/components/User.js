@@ -6,14 +6,14 @@ import "./appStyle.css";
 class User extends Component {
 
   render() {
-    const  { id, className, firstName, lastName, activity, post, when} = this.props   
-
+    const  { id, className, firstName, lastName, activity, post, when, dot} = this.props   
+    console.log('rendered', {dot})
   return (
     <div>
             <div className={`user notification ${className}`} key={id}>
               <img
                 className="avatar"
-                src={`./assets/images/avatar-${firstName}-${lastName}.webp`}
+                src={`./assets/images/avatar-${firstName}-${lastName}.webp`} alt={`${firstName} ${lastName}`}
                 ></img>
               <div className="notification__box">
                 <span className="notification__prop notification__prop--name">
@@ -25,15 +25,15 @@ class User extends Component {
                 </span>
                 {"  "}
                 <span className="notification__prop notification__prop--post">
-                  {post}{" "}
+                  {post}
                 </span>
+              {"  "}
+                <span className={dot}></span>
                 <div>
-                  {this.props.circle}
                   <span className="notification__prop notification__prop--when">
                     {when}
                   </span>
-                  {/* <button onClick={this.changeState}>Mark as read</button>
-                  {this.state.hasChanged && (<span>Updated</span>)} */}
+                 
                 </div>
               </div>
             </div>

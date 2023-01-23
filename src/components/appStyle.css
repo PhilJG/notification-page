@@ -94,15 +94,36 @@ a {
   color: var(--grayish-blue);
 }
 
-.head__read {
+.head__button {
   cursor: pointer;
+  background: none;
+	color: var(--dark-grayish-blue);
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
-/* .read {
+.head__button:hover {
+ color: var(--very-dark-blue);
+} 
+
+.dot__unread {
   width: 10px;
   height: 10px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
   background: var(--red);
-} */
+  display: inline-block;
+}
+
+.dot__read {
+ display: none;
+}
+
+
+
+
+
