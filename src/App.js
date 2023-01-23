@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { Component } from "react";
 import "./App.css";
 // import Head from "./components/Head";
 import User from "./components/User";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       users: [
         {
@@ -15,7 +14,7 @@ class App extends Component {
           lastName: "webber",
           activity: "reacted to your recent post",
           post: "My first tournament today!",
-          read: false,
+          unread: true,
           when: "1m ago",
         },
         {
@@ -23,7 +22,7 @@ class App extends Component {
           firstName: "angela",
           lastName: "gray",
           activity: "followed you",
-          read: false,
+          unread: true,
           when: "5m ago",
         },
         {
@@ -32,7 +31,7 @@ class App extends Component {
           lastName: "thompson",
           activity: "has joined your group",
           post: "Chess Club",
-          read: false,
+          unread: true,
           when: "1days ago",
         },
         {
@@ -40,7 +39,7 @@ class App extends Component {
           firstName: "rizky",
           lastName: "hasanuddin",
           activity: "commented on your picture",
-          read: true,
+          unread: false,
           when: "1 week ago",
         },
         {
@@ -48,7 +47,7 @@ class App extends Component {
           firstName: "kimberly",
           lastName: "smith",
           activity: "commented on your picture",
-          read: true,
+          unread: false,
           when: "1 week ago",
         },
         {
@@ -57,7 +56,7 @@ class App extends Component {
           lastName: "peterson",
           activity: "reacted to your recent post",
           post: "5 end game strategies to increase your win rate",
-          read: true,
+          unread: false,
           when: "2 weeks ago",
         },
         {
@@ -66,29 +65,24 @@ class App extends Component {
           lastName: "kim",
           activity: "left group",
           post: "Chess Club",
-          read: true,
+          unread: false,
           when: "2 weeks ago",
         },
       ],
     };
   }
-   markRead = () => {
+
+   markAllRead = () => {
   
      // loop through users array
      // produce new user object that is set to false with map
-     let readUsers = this.state.users.map((u) => {
-       //if user has not been read(false)
-       if (u.read === false) {
-         //change to read(true)
-         u.read = true;
-         console.log(u);
-         
-       }
-       return u;
+     const updatedUsers = this.state.users.map(user => {
+      console.log('clicked');
+       
+      return { ...user, unread: false };
      });
-     // setState changed to new readUsers array
-     this.setState({ users: readUsers });
-     console.log('read');
+     
+     this.setState({users: updatedUsers});
      
    };
 
@@ -106,7 +100,7 @@ class App extends Component {
             </div>
           </div>
           <button 
-          onClick={this.state.markRead} 
+          onClick={this.markAllRead} 
           className="head__read">
             Mark all as read
           </button>
@@ -116,14 +110,16 @@ class App extends Component {
         {this.state.users.map((user) => (
           <User
             key={user.id}
+            className={user.unread ? "unread" : "read"}
             firstName={user.firstName}
             lastName={user.lastName}
             activity={user.activity}
             post={user.post}
             when={user.when}
-            read={user.read}
+            s
+            // read={user.read && <span>(read)</span>}
             //passing markRead function into component
-            markRead={this.markRead}
+            // markRead={(this.markRead)}
           />
         ))}
       </div>

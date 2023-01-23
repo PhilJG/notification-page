@@ -61,11 +61,11 @@ a {
   border-radius: 5px;
 }
 
-.notification__read {
+.read {
   background-color: var(--white);
 }
 
-.notification__unread {
+.unread {
   background-color: var(--very-light-grayish-blue);
 
 }
@@ -98,11 +98,11 @@ a {
   cursor: pointer;
 }
 
-.read {
+/* .read {
   width: 10px;
   height: 10px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
   background: var(--red);
-}
+} */

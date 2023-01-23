@@ -5,47 +5,32 @@ import "./appStyle.css";
 
 class User extends Component {
 
-  constructor(props){
-    super(props);
-   this.state = {
-    hasChanged: false
-   }
-  }
-
-  changeState = () => {
-    // ev.preventDefault();
-    this.setState({hasChanged:true})
-    console.log('changed');
-    
-
-    //pass the name back up to App.js level which will make the state change in the parent rerender 
-    // this.props.markRead(this.props.firstName)
-    
-  }
   render() {
-    return (
-      <div >
-            <div className={"notification flex"} key={this.props.id}>
+    const  { id, className, firstName, lastName, activity, post, when} = this.props   
+
+  return (
+    <div>
+            <div className={`user notification ${className}`} key={id}>
               <img
                 className="avatar"
-                src={`./assets/images/avatar-${this.props.firstName}-${this.props.lastName}.webp`}
-           ></img>
+                src={`./assets/images/avatar-${firstName}-${lastName}.webp`}
+                ></img>
               <div className="notification__box">
                 <span className="notification__prop notification__prop--name">
-                  {this.props.firstName} {this.props.lastName}
+                  {firstName} {lastName}
                 </span>
                 {"  "}
                 <span className="notification__prop notification__prop--activity">
-                  {this.props.activity}
+                  {activity}
                 </span>
                 {"  "}
                 <span className="notification__prop notification__prop--post">
-                  {this.props.post}{" "}
+                  {post}{" "}
                 </span>
                 <div>
                   {this.props.circle}
                   <span className="notification__prop notification__prop--when">
-                    {this.props.when}
+                    {when}
                   </span>
                   {/* <button onClick={this.changeState}>Mark as read</button>
                   {this.state.hasChanged && (<span>Updated</span>)} */}
@@ -55,7 +40,8 @@ class User extends Component {
       </div>
     );
   }
-}
+} 
+
 
 // return (
 //   <div className='notification flex'>
