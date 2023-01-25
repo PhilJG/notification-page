@@ -16,7 +16,7 @@ class App extends Component {
           post: "My first tournament today!",
           unread: true,
           when: "1m ago",
-        },
+        image:false,},
         {
           id: "2",
           firstName: "angela",
@@ -24,7 +24,7 @@ class App extends Component {
           activity: "followed you",
           unread: true,
           when: "5m ago",
-        },
+        image:false,},
         {
           id: "3",
           firstName: "jacob",
@@ -33,23 +33,25 @@ class App extends Component {
           post: "Chess Club",
           unread: true,
           when: "1days ago",
-        },
+        image:false,},
         {
           id: "4",
           firstName: "rizky",
           lastName: "hasanuddin",
-          activity: "commented on your picture",
+          activity: "sent you a private message",
           unread: false,
           when: "1 week ago",
+          image:false,comment: "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I`m already having lots of fun and improving my game."
         },
         {
           id: "5",
           firstName: "kimberly",
           lastName: "smith",
           activity: "commented on your picture",
+       
           unread: false,
           when: "1 week ago",
-        },
+        image:true,},
         {
           id: "6",
           firstName: "nathan",
@@ -58,7 +60,7 @@ class App extends Component {
           post: "5 end game strategies to increase your win rate",
           unread: false,
           when: "2 weeks ago",
-        },
+        image:false,},
         {
           id: "7",
           firstName: "anna",
@@ -67,7 +69,7 @@ class App extends Component {
           post: "Chess Club",
           unread: false,
           when: "2 weeks ago",
-        },
+        image:false,},
       ],
     };
   }
@@ -103,6 +105,8 @@ class App extends Component {
             post={user.post}
             when={user.when}
             dot={user.unread ? "dot__unread" : "dot__read"}
+            comment={user.comment}
+            image={user.image}
             
             // read={user.read && <span>(read)</span>}
             //passing markRead function into component

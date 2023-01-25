@@ -13,6 +13,10 @@
 body {
   font-size: 16px;
   font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--very-light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex {
@@ -32,7 +36,13 @@ a {
   color: var(--blue);
 }
 .container {
-  padding: 5vw;
+  padding: 3rem;
+  max-width: 700px;
+  background-color: var(--white);
+  margin: 50px 0;
+}
+.none {
+  display: none;
 }
 
 /* Head */
@@ -63,10 +73,12 @@ a {
   padding: 0.75rem;
   margin: 0.75rem 0;
   border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50px auto 1fr;
 }
 
 .read {
-  background-color: var(--white);
+  background-color: transparent;
 }
 
 .unread {
@@ -77,11 +89,28 @@ a {
   padding-left: 1rem;
   display: inline;
 }
+
+.notification__box--comment {
+  border: 1px solid var(--light-grayish-blue-1);
+  padding: 1rem;
+  color: var(--dark-grayish-blue);
+  grid-column: 2;
+}
+
+.notification__box--comment:empty {
+ display: none;
+}
 .avatar {
   width: 40px;
 }
 .notification__prop {
   color: var(--dark-grayish-blue);
+  font-size: 16px;
+}
+
+.notification__prop--name:hover, .notification__prop--post:hover {
+  cursor: pointer;
+color: var(--blue);
 }
 .notification__prop--name {
   text-transform: capitalize;
@@ -113,6 +142,12 @@ a {
  color: var(--very-dark-blue);
 } 
 
+.post-image{
+  align-self: flex-end;
+  grid-column: 4;
+  width: 50px;
+}
+
 .dot__unread {
   width: 10px;
   height: 10px;
@@ -121,11 +156,13 @@ a {
   border-radius: 25px;
   background: var(--red);
   display: inline-block;
+
 }
 
 .dot__read {
  display: none;
 }
+
 
 
 

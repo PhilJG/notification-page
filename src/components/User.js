@@ -6,12 +6,13 @@ import "./appStyle.css";
 class User extends Component {
 
   render() {
-    const  { id, className, firstName, lastName, activity, post, when, dot} = this.props   
+    const  { id, className, firstName, lastName, activity, post, when, dot, comment, image} = this.props   
     
+    const displayImage = image == true ? "post-image" : "none"  
     const whiteSpace = "    "
   return (
     <div>
-            <div className={`user notification flex ${className}`} key={id}>
+            <div className={`user notification  ${className}`} key={id}>
               <img
                 className="avatar"
                 src={`./assets/images/avatar-${firstName}-${lastName}.webp`} alt={`${firstName} ${lastName}`}
@@ -25,9 +26,9 @@ class User extends Component {
                   {activity}
                 </span>
                 {whiteSpace}
-                <span className="notification__prop notification__prop--post">
+                <a className="notification__prop notification__prop--post">
                   {post}
-                </span>
+                </a>
               {whiteSpace}
                 <span className={dot}></span>
                 <div>
@@ -37,38 +38,14 @@ class User extends Component {
                  
                 </div>
               </div>
+                <img className={(displayImage)} src="./assets/images/image-chess.webp"></img>
+              <p className="notification__box--comment">
+              {comment}
+              </p>
             </div>
       </div>
     );
   }
 } 
 
-
-// return (
-//   <div className='notification flex'>
-//     <img
-//       className='avatar'
-//       src={`./assets/images/avatar-${props.firstName}-${props.lastName}.webp`}></img>
-//     <div className='notification__box'>
-//       <span className='notification__prop notification__prop--name'>
-//         {props.firstName} {props.lastName}
-//       </span>
-//       {"  "}
-//       <span className='notification__prop notification__prop--activity'>
-//         {props.activity}
-//       </span>
-//       {"  "}
-//       <span className='notification__prop notification__prop--post'>
-//         {props.post}{" "}
-//       </span>
-//       <div>
-//         {props.circle}
-//         <span className='notification__prop notification__prop--when'>
-//           {props.when}
-//         </span>
-//       </div>
-//     </div>
-//   </div>
-// );
-// };
 export default User;
