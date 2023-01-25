@@ -8,7 +8,7 @@ class User extends Component {
   render() {
     const  { id, className, firstName, lastName, activity, post, when, dot, comment, image} = this.props   
     
-    const displayImage = image == true ? "post-image" : "none"  
+    const displayImage = image === true ? "post-image" : "none"  
     const whiteSpace = "    "
   return (
     <div>
@@ -26,9 +26,9 @@ class User extends Component {
                   {activity}
                 </span>
                 {whiteSpace}
-                <a className="notification__prop notification__prop--post">
+                <span href="#" className="notification__prop notification__prop--post">
                   {post}
-                </a>
+                </span>
               {whiteSpace}
                 <span className={dot}></span>
                 <div>
@@ -38,7 +38,7 @@ class User extends Component {
                  
                 </div>
               </div>
-                <img className={(displayImage)} src="./assets/images/image-chess.webp"></img>
+                <img className={(displayImage)} src="./assets/images/image-chess.webp" alt="chess player"></img>
               <p className="notification__box--comment">
               {comment}
               </p>

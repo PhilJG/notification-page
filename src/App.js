@@ -107,10 +107,6 @@ class App extends Component {
             dot={user.unread ? "dot__unread" : "dot__read"}
             comment={user.comment}
             image={user.image}
-            
-            // read={user.read && <span>(read)</span>}
-            //passing markRead function into component
-            // markRead={(this.markRead)}
           />
         ))}
       </div>
