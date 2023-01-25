@@ -7,10 +7,11 @@ class User extends Component {
 
   render() {
     const  { id, className, firstName, lastName, activity, post, when, dot} = this.props   
-    console.log('rendered', {dot})
+    
+    const whiteSpace = "    "
   return (
     <div>
-            <div className={`user notification ${className}`} key={id}>
+            <div className={`user notification flex ${className}`} key={id}>
               <img
                 className="avatar"
                 src={`./assets/images/avatar-${firstName}-${lastName}.webp`} alt={`${firstName} ${lastName}`}
@@ -19,15 +20,15 @@ class User extends Component {
                 <span className="notification__prop notification__prop--name">
                   {firstName} {lastName}
                 </span>
-                {"  "}
+                {whiteSpace}
                 <span className="notification__prop notification__prop--activity">
                   {activity}
                 </span>
-                {"  "}
+                {whiteSpace}
                 <span className="notification__prop notification__prop--post">
                   {post}
                 </span>
-              {"  "}
+              {whiteSpace}
                 <span className={dot}></span>
                 <div>
                   <span className="notification__prop notification__prop--when">

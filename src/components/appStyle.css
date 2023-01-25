@@ -50,6 +50,10 @@ a {
   font-weight: 800;
 }
 
+.head__count:empty {
+  display: none;
+}
+
 .head__right {
   cursor: pointer;
 }

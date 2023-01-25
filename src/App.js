@@ -86,15 +86,16 @@ class App extends Component {
 
 
   render() {
+    const unreadCount = this.state.users.filter(user => user.unread).length;
+    
     return (
       <div className="container">
         <div className="flex head">
           <div className="head__left flex">
             <h1>Notifications</h1>
             <div 
-            // className={state ? "head__count" : " "}
-            >
-              {/* {state ? "3" : " "} */}
+            className="head__count">
+              {unreadCount > 0 ? unreadCount : ""}
             </div>
           </div>
           <button 
