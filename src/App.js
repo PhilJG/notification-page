@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-// import Head from "./components/Head";
+import Head from "./components/Head";
 import User from "./components/User";
 
 class App extends Component {
@@ -86,25 +86,12 @@ class App extends Component {
 
 
   render() {
-    const unreadCount = this.state.users.filter(user => user.unread).length;
     
     return (
       <div className="container">
-        <div className="flex head">
-          <div className="head__left flex">
-            <h1>Notifications</h1>
-            <div 
-            className="head__count">
-              {unreadCount > 0 ? unreadCount : ""}
-            </div>
-          </div>
-          <button 
-          onClick={this.markAllRead} 
-          className="head__button">
-            Mark all as read
-          </button>
-        </div>
-        {/* <Head /> */}
+        <Head 
+        users={this.state.users} 
+        markAllRead={this.markAllRead}/> 
 
         {this.state.users.map((user) => (
           <User
