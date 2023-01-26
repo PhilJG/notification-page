@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Component } from "react";
 
 class Head extends Component {
