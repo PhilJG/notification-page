@@ -2,7 +2,7 @@ import React from "react";
 
 import { Component } from "react";
 
-import "./appStyle.css";
+import "../App.css";
 
 class User extends Component {
 
@@ -16,7 +16,7 @@ class User extends Component {
             <div className={`user notification  ${className}`} key={id}>
               <img
                 className="avatar"
-                src={`./assets/images/avatar-${firstName}-${lastName}.webp`} alt={`${firstName} ${lastName}`}
+                src={`/assets/images/avatar-${firstName}-${lastName}.webp`} alt={`${firstName} ${lastName}`}
                 ></img>
               <div className="notification__box">
                 <span className="notification__prop notification__prop--name">
