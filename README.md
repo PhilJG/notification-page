@@ -30,13 +30,13 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile](./design/screenshots/mobile-view.png/screenshot.jpg)
-![Desktop](./design/screenshots/desktop-view.png/screenshot.jpg)
+![Mobile](design/screenshots/mobile-view.png/screenshot.jpg)
+![Desktop](design/screenshots/desktop-view.png/screenshot.jpg)
 
 ### Links
 
 - Solution URL: [Github repo URL here](https://github.com/PhilJG/notification-page)
-- Live Site URL: [Live Site](https://philjg.github.io/notification-page/)
+- Live Site URL: [Live Site](https://clever-strudel-57ca19.netlify.app/)
 
 ## My process
 
